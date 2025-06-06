@@ -1,0 +1,14 @@
+[remap]
+
+importer="ply_importer"
+type="ArrayMesh"
+uid="uid://da7hfusxsp6e2"
+path="res://.godot/imported/hypogee_Lisor_11M.ply-984eabb6466061be04179eb8e54f995c.mesh"
+
+[deps]
+
+source_file="res://hypogee_Lisor_11M.ply"
+dest_files=["res://.godot/imported/hypogee_Lisor_11M.ply-984eabb6466061be04179eb8e54f995c.mesh"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="ply_importer"
+type="ArrayMesh"
+uid="uid://dq8t8nxjyrg7"
+path="res://.godot/imported/Spaghetti Sandwich-1.ply-e6247fc78c538814680a14f5b0556495.mesh"
+
+[deps]
+
+source_file="res://Spaghetti Sandwich-1.ply"
+dest_files=["res://.godot/imported/Spaghetti Sandwich-1.ply-e6247fc78c538814680a14f5b0556495.mesh"]
+
+[params]
+

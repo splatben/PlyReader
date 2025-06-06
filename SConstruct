@@ -6,7 +6,7 @@ from methods import print_error
 
 
 libname = "PlyReader"
-projectdir = "demo"
+projectdir = "demo/addons/PlyReader"
 
 localEnv = Environment(tools=["default"], PLATFORM="")
 
@@ -54,11 +54,11 @@ suffix = env['suffix'].replace(".dev", "").replace(".universal", "")
 lib_filename = "{}{}{}{}".format(env.subst('$SHLIBPREFIX'), libname, suffix, env.subst('$SHLIBSUFFIX'))
 
 library = env.SharedLibrary(
-    "bin/{}/{}".format(env['platform'], lib_filename),
+    "bin/{}".format(lib_filename),
     source=sources,
 )
 
-copy = env.Install("{}/bin/{}/".format(projectdir, env["platform"]), library)
+copy = env.Install("{}/bin".format(projectdir), library)
 
 default_args = [library, copy]
 Default(*default_args)

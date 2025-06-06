@@ -29,34 +29,38 @@ protected:
 
 public:
 	// Charge un fichier PLY et retourne un MeshInstance3D généré
-	MeshInstance3D* load_ply(String file_path, bool quiet = false);
-
-private:
-	// Convertit un tableau (d'Array) de faces en un PackedInt32Array d'indices.
-	PackedInt32Array face_to_indices(const Array &faces);
+	ArrayMesh* load_ply(const String& )const;
+	// Crée et retourne un MeshInstance3D à partir des données (arrays)
+	ArrayMesh* create_mesh(const Array &, bool )const;
 
 	// Construit le tableau final servant à créer l'ArrayMesh.
-	Array data_to_arrays(const PackedVector3Array &vertices,
-			const PackedInt32Array &indices,
-			const PackedColorArray &colors,
-			const PackedVector3Array &normals,
-			const PackedVector2Array &uv_mapping);
+	Array data_to_arrays(const PackedVector3Array &,
+			const PackedInt32Array &,
+			const PackedColorArray &,
+			const PackedVector3Array &,
+			const PackedVector2Array &)const;
+private:
+	// Convertit un tableau (d'Array) de faces en un PackedInt32Array d'indices.
+	PackedInt32Array face_to_indices(const PackedInt32Array&)const;
 
-	Array _read_ascii_ply(Ref<FileAccess> file, const Array &property, int vertex_count, int face_count);
+	void _read_ascii_vertices(Ref<FileAccess> ,float * ,int )const;
 
-	Array _read_binary_ply(Ref<FileAccess> file, const Array &property, const Array &property_type, const Array &face_type, int vertex_count, int face_count);
+	void _read_binary_vertices(Ref<FileAccess>,const PackedInt32Array& ,float * ,int  )const;
+
+	void _read_ascii_faces(Ref<FileAccess> ,PackedInt32Array&,int )const;
+
+	void _read_binary_faces(Ref<FileAccess> ,PackedInt32Array&,const int*,int)const;
+
+	Array _read_ply(Ref<FileAccess> , const Array &, const PackedInt32Array &,const int *, int , int ,bool )const;
 
 	// Retourne un entier décrivant le type (8,16,32,-32(float) ou 64 bits) d’après la chaîne passée.
-	int _type_to_bits(String type);
+	int _type_to_bits(String )const;
 
 	// Pour un lire float depuis binaire selon le bon nombre d'octet
-	float read_float_for_type(Ref<FileAccess> file, int type);
-
-	// Crée et retourne un MeshInstance3D à partir des données (arrays)
-	MeshInstance3D *create_mesh(const Array &arrays, bool pointCloud);
+	float read_float_for_type(Ref<FileAccess> , int )const;
 	
 	//pour lire les faces sui sont forcement en int32
-	int32_t PlyReader::read_int_for_type(Ref<FileAccess> file, int type);
+	int32_t read_int_for_type(Ref<FileAccess> , int )const;
 };
 
 

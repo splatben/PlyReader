@@ -1,0 +1,9 @@
+[configuration]
+
+entry_symbol = "PlyReader_init"
+relodable=true
+compatibility_minimum = "4.4"
+
+[libraries]
+
+windows.x86_64 = "bin/PlyReader.windows.template_release.x86_64.dll"
