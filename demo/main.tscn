@@ -1,14 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://rsl0b2yngtmq"]
-
-[ext_resource type="ArrayMesh" uid="uid://b177sjn62akkd" path="res://Earing.ply" id="1_0xm2m"]
-[ext_resource type="ArrayMesh" uid="uid://dq8t8nxjyrg7" path="res://Spaghetti Sandwich-1.ply" id="3_1bvp3"]
+[gd_scene format=3 uid="uid://rsl0b2yngtmq"]
 
 [node name="Node3D" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.324004, 0.867444, 0.377573, 0.0340051, -0.409523, 0.911665, 0.945444, -0.282544, -0.162185, -2.94359, 0.748581, 0.559929)
-mesh = ExtResource("1_0xm2m")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.0532771, 0.99858, 0, -0.99858, 0.0532771, 0.839617, 0.234549, -0.48566)
-mesh = ExtResource("3_1bvp3")
